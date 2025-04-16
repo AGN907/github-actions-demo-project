@@ -13,7 +13,7 @@ app.use(
     origin: "*",
     credentials: true,
     optionSuccessStatus: 200,
-  })
+  }),
 );
 
 // setup body parser.
@@ -27,9 +27,9 @@ app.use("/recipes", require("./routes/recipes"));
 async function startServer() {
   try {
     // Load express app to listen on config port.
-    const port = 3000
+    const port = 3000;
     server = app.listen(port, () => {
-      console.log(`Service ready on :${port}`)
+      console.log(`Service ready on :${port}`);
     });
   } catch (error) {
     console.error("Failed to connect to the database:", error);
@@ -45,3 +45,4 @@ function stop() {
 export { server, startServer, stop };
 
 startServer();
+
